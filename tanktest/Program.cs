@@ -202,36 +202,39 @@ namespace tanktest
                     }
 
                 }
+
                     Console.Clear();
-
-                    
-
-
-
-
                 }
 
             
             if (myTank.armor <= 0)
             {
+                Console.WriteLine(":/");
+                Console.WriteLine("");
                 Console.WriteLine("The first Tank has been defeated");
                 myTank2.shellsRemaining = 0;
 
             }
             else if (myTank2.armor <= 0)
             {
+                Console.WriteLine("U_U");
+                Console.WriteLine("");
                 Console.WriteLine("The second Tank has been defeated");
                 myTank2.shellsRemaining = 0;
 
             }
             else if (myTank2.shellsRemaining == 0)
             {
-                Console.Clear();
+                
+                Console.WriteLine("0__0");
+                Console.WriteLine("");
                 Console.WriteLine("The first Tank wins. The second Tank used all its shells");
             }
             else if (myTank.shellsRemaining == 0)
             {
-                Console.Clear();
+                
+                Console.WriteLine("O__O");
+                Console.WriteLine("");
                 Console.WriteLine("the second Tank wins. The first Tank used all its shells");
             }
             Console.Read();
@@ -246,8 +249,6 @@ namespace tanktest
                 
                     
             }
-
-
         }
         void shootEnemy(Tank target)
         {
