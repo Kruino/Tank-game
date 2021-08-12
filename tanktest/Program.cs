@@ -39,7 +39,7 @@ namespace tanktest
             
 
 
-            Console.WriteLine("How much health do you want the tanks to have?");
+            Console.WriteLine("How much health do you want the Tanks to have?");
                 int Health = Convert.ToInt32(Console.ReadLine());
 
                 myTank.armor = Health;
@@ -55,7 +55,7 @@ namespace tanktest
 
                 Console.Clear();
 
-            Console.WriteLine("Second tank do you wanna dodge the first shot? press (D) | (Any Key) to skip");
+            Console.WriteLine("Second Tank do you wanna dodge the first shot? press (D) | (Any Key) to skip");
             ConsoleKeyInfo initialDodge = Console.ReadKey();
             if (initialDodge.Key == ConsoleKey.D)
             {
@@ -73,7 +73,7 @@ namespace tanktest
                 if (myTank.armor > 0)
                 {
 
-                    Console.WriteLine("First tank you're up");
+                    Console.WriteLine("First Tank you're up");
                     Console.WriteLine("");
                     if (myTank.HeavyCharge >= 5)
                     {
@@ -86,7 +86,7 @@ namespace tanktest
 
                     ConsoleKeyInfo Shot = Console.ReadKey();
 
-                    if (myTank2.HeavyCharge >= 5 && Shot.Key == ConsoleKey.H)
+                    if (myTank.HeavyCharge >= 5 && Shot.Key == ConsoleKey.H)
                     {
                         if (Shot.Key == ConsoleKey.H)
                         {
@@ -139,7 +139,7 @@ namespace tanktest
                 menu();
                 if (myTank2.armor > 0)
                 {
-                    Console.WriteLine("Second tank you're up");
+                    Console.WriteLine("Second Tank you're up");
                     Console.WriteLine("");
                     if (myTank2.HeavyCharge >= 5)
                     {
@@ -220,7 +220,7 @@ namespace tanktest
             }
             else if (myTank2.armor <= 0)
             {
-                Console.WriteLine("Tank second Tank has been defeated");
+                Console.WriteLine("The second Tank has been defeated");
                 myTank2.shellsRemaining = 0;
 
             }
