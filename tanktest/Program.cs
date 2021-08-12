@@ -72,6 +72,7 @@ namespace tanktest
                 //____________________________________________________________________________________________________________________________________________________________//
                 // Tank 1
                 menu();
+              
                 if (myTank.armor > 0)
                 {
                     
@@ -128,7 +129,7 @@ namespace tanktest
                         {
                             Console.Clear();
                             menu();
-                            Console.WriteLine("The second Tank has dodged you're attack");
+                            animation.Dodge1();
                             myTank2.Dodge--;
                             myTank.LoseAmmo(myTank.shellsRemaining);
                             Thread.Sleep(3000);
@@ -203,7 +204,7 @@ namespace tanktest
                         {
                             Console.Clear();
                             menu();
-                            Console.WriteLine("The first Tank has dodged you're attack");
+                            animation.Dodge2();
                             myTank.Dodge--;
                             myTank2.LoseAmmo(myTank.shellsRemaining);
                             Thread.Sleep(3000);
