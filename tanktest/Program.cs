@@ -89,7 +89,7 @@ namespace tanktest
                     
                 //____________________________________________________________________________________________________________________________________________________________//
                 // Tank 1
-                menu();
+                
 
                     if (myTank.armor <= 0 || myTank.shellsRemaining <= 0 || myTank2.armor <= 0 || myTank2.shellsRemaining <= 0)
                     {
@@ -97,6 +97,7 @@ namespace tanktest
                     }
                     else
                     {
+                        menu();
                         if (myTank.armor > 0)
                         {
 
@@ -274,7 +275,7 @@ namespace tanktest
 
 
                 }
-
+                End();
          
             Console.Read();
 
