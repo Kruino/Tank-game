@@ -706,6 +706,331 @@ namespace tanktest
             Console.WriteLine("                                          (---------)                                                              ");
         }
 
+        public void HeavyVisual1()
+        {
+
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                        =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====  ####                  =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====    ####                =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====      ####              =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====        ####            =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====          ####          =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====            ####        =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====              ####      =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                ####    =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                  ####  =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                    ####=====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+            Console.WriteLine("    ______                        x       x   ______                                                                 ");
+            Console.WriteLine("   /      \\=====                    x   =====/xxxxxx\\   x                                                          ");
+            Console.WriteLine("  (---------)                         x    (xxxxxxxxx)   x                                                           ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                 ");
+            Console.WriteLine("   /      \\=====                        =====/      \\                                                              ");
+            Console.WriteLine("  (---------)                              (---------)                                                               ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+            Console.WriteLine("    ______                        x       x   ______                                                                 ");
+            Console.WriteLine("   /      \\=====                   x    =====/xxxxxx\\    x                                                          ");
+            Console.WriteLine("  (---------)                        x     (xxxxxxxxx)    x                                                           ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+            Console.WriteLine("    ______                                    ______                                                                 ");
+            Console.WriteLine("   /      \\=====                        =====/      \\                                                              ");
+            Console.WriteLine("  (---------)                              (---------)                                                               ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+            
+            Console.WriteLine("    ______                        x      x    ______                                                                 ");
+            Console.WriteLine("   /      \\=====                    x   =====/xxxxxx\\    x                                                         ");
+            Console.WriteLine("  (---------)                         x    (xxxxxxxxx)   x                                                           ");
+        }
+
+        public void HeavyVisual2()
+        {
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                    ####=====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                  ####  =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====                ####    =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====              ####      =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====            ####        =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====          ####          =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====        ####            =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====      ####              =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====    ####                =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====  ####                  =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(50);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                   ");
+            Console.WriteLine("   /      \\=====####                    =====/      \\                                                                ");
+            Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("x  x______    x      x                        ______                                                                ");
+            Console.WriteLine("  x/xxxxxx\\=====  x                     =====/      \\                                                            ");
+            Console.WriteLine("x (xxxxxxxxx)   x                          (---------)                                                             ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                ");
+            Console.WriteLine("   /      \\=====##                      =====/      \\                                                             ");
+            Console.WriteLine("  (---------)                              (---------)                                                              ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("x  x______    x     x                         ______                                                                ");
+            Console.WriteLine("  x/xxxxxx\\=====    x                   =====/      \\                                                            ");
+            Console.WriteLine("x (xxxxxxxxx)   x                          (---------)                                                             ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine("    ______                                    ______                                                                ");
+            Console.WriteLine("   /      \\=====                        =====/      \\                                                             ");
+            Console.WriteLine("  (---------)                              (---------)                                                              ");
+
+            Thread.Sleep(100);
+
+            Console.SetCursorPosition(1, Console.CursorTop - 3);
+            ClearCurrentConsoleLine();
+
+
+            Console.WriteLine(" x  ______   x      x                         ______                                                                ");
+            Console.WriteLine(" x /xxxxxx\\===== x                      =====/      \\                                                            ");
+            Console.WriteLine("x (xxxxxxxxx)  x                           (---------)                                                             ");
+        }
+
+
+
+
         public void ClearCurrentConsoleLine()
         {
             int currentLineCursor = Console.CursorTop;
@@ -715,6 +1040,4 @@ namespace tanktest
         }
 
     }
-
-
 }

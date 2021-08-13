@@ -26,7 +26,7 @@ namespace tanktest
             myTank.shellsRemaining = 25;
             myTank.Dmg = 15;
             myTank.HeavyDmg = 100;
-            myTank.HeavyCharge = 0;
+            myTank.HeavyCharge = 5;
             myTank.Dodge = 0;
 
 
@@ -34,7 +34,7 @@ namespace tanktest
             myTank2.shellsRemaining = 25;
             myTank2.Dmg = 15;
             myTank2.HeavyDmg = 100;
-            myTank2.HeavyCharge = 0;
+            myTank2.HeavyCharge = 5;
             myTank2.Dodge = 0;
 
 
@@ -89,6 +89,10 @@ namespace tanktest
                         Console.WriteLine("Shoot the second Tank? (S) to shoot | (D) to dodge");
                     }
 
+                    Console.WriteLine("    ______                                    ______                                                                   ");
+                    Console.WriteLine("   /      \\=====                        =====/      \\                                                                ");
+                    Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
                     ConsoleKeyInfo Shot = Console.ReadKey();
 
                     
@@ -99,7 +103,9 @@ namespace tanktest
                         {
                             myTank.shootHeavy(myTank2);
                             myTank.HeavyCharge -= 5;
-                            menu();
+                            Console.SetCursorPosition(1, Console.CursorTop - 3);
+                            animation.ClearCurrentConsoleLine();
+                            animation.HeavyVisual1();
                         }
 
                         if (myTank2.Dodge == 1)
@@ -164,6 +170,10 @@ namespace tanktest
                         Console.WriteLine("Shoot the first Tank? (S) to shoot | (D) to dodge");
                     }
 
+                    Console.WriteLine("    ______                                    ______                                                                   ");
+                    Console.WriteLine("   /      \\=====                        =====/      \\                                                                ");
+                    Console.WriteLine("  (---------)                              (---------)                                                                 ");
+
                     ConsoleKeyInfo Shot2 = Console.ReadKey();
 
                   
@@ -174,7 +184,9 @@ namespace tanktest
                         {
                             myTank2.shootHeavy(myTank);
                             myTank2.HeavyCharge -= 5;
-                            menu();
+                            Console.SetCursorPosition(1, Console.CursorTop - 3);
+                            animation.ClearCurrentConsoleLine();
+                            animation.HeavyVisual2();
                         }
 
                         else if (myTank.Dodge == 1)
@@ -263,7 +275,7 @@ namespace tanktest
                 Console.WriteLine("|Tank 2 has " + myTank2.armor + " Health Left || " + "tank 2 has " + myTank2.shellsRemaining + " Shells left || Tank 2 has " + myTank2.HeavyCharge + "/5 before it gets a heavy attack|");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
                 Console.WriteLine("");
-                                 
+
             }          
 
         }
