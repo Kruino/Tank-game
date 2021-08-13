@@ -39,20 +39,22 @@ namespace tanktest
 
 
             animation.StartMenu();
+            
 
             ConsoleKeyInfo Start = Console.ReadKey();
             if (Start.Key == ConsoleKey.Enter)
             {
-                Console.Clear();
-            
 
-            Console.WriteLine("How much health do you want the Tanks to have?");
+                try { 
+                Console.SetCursorPosition(1, Console.CursorTop - 1);
+                animation.ClearCurrentConsoleLine();
+                Console.WriteLine("How much health do you want the Tanks to have?");
                 int Health = Convert.ToInt32(Console.ReadLine());
 
                 myTank.armor = Health;
-                myTank2.armor = Health; 
+                myTank2.armor = Health;
 
-                Console.Clear();
+                animation.Clear2Lines();
 
                 Console.WriteLine("How many bullets do you want?");
                 int bullets = Convert.ToInt32(Console.ReadLine());
@@ -60,154 +62,189 @@ namespace tanktest
                 myTank.shellsRemaining = bullets;
                 myTank2.shellsRemaining = bullets;
 
-                Console.Clear();
+                }
+                catch 
+                {
+                    Environment.Exit(0);
+                }
 
-            Console.WriteLine("Second Tank do you wanna dodge the first shot? press (D) | (Any Key) to skip");
-            ConsoleKeyInfo initialDodge = Console.ReadKey();
-            if (initialDodge.Key == ConsoleKey.D)
+                animation.Clear2Lines();
+
+                try
+                {
+                    Console.WriteLine("Second Tank do you wanna dodge the first shot? press (D) | (Any Key) to skip");
+                    ConsoleKeyInfo initialDodge = Console.ReadKey();
+                    if (initialDodge.Key == ConsoleKey.D)
+                    {
+                        myTank2.Dodge++;
+                    }
+                    animation.StartClear();
+                }
+                catch
+                {
+                    Environment.Exit(0);
+                }
+             while (myTank2.armor > 0 && myTank.armor > 0 && myTank.shellsRemaining > 0 && myTank2.shellsRemaining > 0)
             {
-                myTank2.Dodge++;
-            }
-
-            while (myTank2.armor > 0 && myTank.armor > 0 && myTank.shellsRemaining > 0 && myTank2.shellsRemaining > 0)
-            {
-                   
-                Console.Clear();
-
+                    
                 //____________________________________________________________________________________________________________________________________________________________//
                 // Tank 1
                 menu();
-              
-                if (myTank.armor > 0)
-                {
-                    
-                    Console.WriteLine("First Tank you're up");
-                    Console.WriteLine("");
-                    if (myTank.HeavyCharge >= 5)
+
+                    if (myTank.armor <= 0 || myTank.shellsRemaining <= 0 || myTank2.armor <= 0 || myTank2.shellsRemaining <= 0)
                     {
-                        
-                        Console.WriteLine("You're HeavyShot is ready || (H) for heavy | (S) for normal shot | (D) to dodge ");
+                        End();
                     }
                     else
                     {
-                        
-                        Console.WriteLine("Shoot the second Tank? (S) to shoot | (D) to dodge");
-                    }
-
-                    Console.WriteLine("    ______                                    ______                                                                   ");
-                    Console.WriteLine("   /      \\=====                        =====/      \\                                                                ");
-                    Console.WriteLine("  (---------)                              (---------)                                                                 ");
-
-                    ConsoleKeyInfo Shot = Console.ReadKey();
-
-                    
-
-                    if (myTank.HeavyCharge >= 5 && Shot.Key == ConsoleKey.H)
-                    {
-                        if (Shot.Key == ConsoleKey.H)
+                        if (myTank.armor > 0)
                         {
-                            myTank.shootHeavy(myTank2);
-                            myTank.HeavyCharge -= 5;
-                            Console.SetCursorPosition(1, Console.CursorTop - 3);
+
+                            Console.WriteLine("First Tank you're up                                                      ");
+                            Console.WriteLine("                                                                          ");
+                            if (myTank.HeavyCharge >= 5)
+                            {
+
+                                Console.WriteLine("You're HeavyShot is ready || (H) for heavy | (S) for normal shot | (D) to dodge      ");
+                            }
+                            else
+                            {
+
+                                Console.WriteLine("Shoot the second Tank? (S) to shoot | (D) to dodge                                  ");
+                            }
+
+                            animation.TanksNoAnimation();
+
+                            ConsoleKeyInfo Shot = Console.ReadKey();
+
+                            Console.SetCursorPosition(1, Console.CursorTop - 1);
                             animation.ClearCurrentConsoleLine();
-                            animation.HeavyVisual1();
+
+                            if (myTank.HeavyCharge >= 5 && Shot.Key == ConsoleKey.H && myTank2.Dodge == 0)
+                            {
+                                if (Shot.Key == ConsoleKey.H)
+                                {
+                                    myTank.shootHeavy(myTank2);
+                                    myTank.HeavyCharge -= 5;
+                                    Console.SetCursorPosition(1, Console.CursorTop - 3);
+                                    animation.ClearCurrentConsoleLine();
+                                    animation.HeavyVisual1();
+                                }
+
+                                if (myTank2.Dodge == 1)
+                                {
+
+                                    Console.Clear();
+                                    menu();
+                                    Console.WriteLine("The second Tank has dodged you're attack");
+                                    myTank2.Dodge--;
+                                    Thread.Sleep(3000);
+                                }
+                            }
+
+                            else if (myTank2.armor > 0 && Shot.Key == ConsoleKey.S && myTank2.Dodge == 0)
+                            {
+                                myTank.shootEnemy(myTank2);
+                                myTank.LoseAmmo(myTank.shellsRemaining);
+                                myTank.HeavyCharge++;
+                                Console.SetCursorPosition(1, Console.CursorTop - 3);
+                                animation.ClearCurrentConsoleLine();
+                                animation.ShotVisual1();
+                                if (myTank2.Dodge == 0 && Shot.Key == ConsoleKey.S)
+
+                                    if (myTank2.Dodge == 1)
+                                    {
+                                        Console.SetCursorPosition(1, Console.CursorTop - 3);
+                                        animation.ClearCurrentConsoleLine();
+                                        animation.Dodge1();
+                                        myTank2.Dodge--;
+                                        myTank.LoseAmmo(myTank.shellsRemaining);
+                                        Thread.Sleep(3000);
+                                    }
+                            }
+
+                            else if (myTank2.Dodge == 1)
+                            {
+                                Console.SetCursorPosition(1, Console.CursorTop - 3);
+                                animation.ClearCurrentConsoleLine();
+                                animation.Dodge1();
+                                myTank2.Dodge--;
+                                myTank.LoseAmmo(myTank.shellsRemaining);
+                                Thread.Sleep(3000);
+                            }
+
+                            else if (myTank2.armor > 0 && Shot.Key == ConsoleKey.D)
+                            {
+                                myTank.Dodge++;
+
+                            }
                         }
 
-                        if (myTank2.Dodge == 1)
-                        {
-
-                            Console.Clear();
-                            menu();
-                            Console.WriteLine("The second Tank has dodged you're attack");
-                            myTank2.Dodge--;
-                            Thread.Sleep(3000);
-                        }
                     }
 
-                    else if (myTank2.armor > 0 && Shot.Key == ConsoleKey.S)
+                    //____________________________________________________________________________________________________________________________________________________________//
+                    // Tank 2
+                    if (myTank.armor <= 0 || myTank.shellsRemaining <= 0 || myTank2.armor <= 0 || myTank2.shellsRemaining <= 0)
                     {
-                        if (myTank2.Dodge == 0 && Shot.Key == ConsoleKey.S)
-                        {
-                            myTank.shootEnemy(myTank2);
-                            myTank.LoseAmmo(myTank.shellsRemaining);
-                            myTank.HeavyCharge++;
-                            Console.SetCursorPosition(1, Console.CursorTop - 3);
-                            animation.ClearCurrentConsoleLine();
-                            animation.ShotVisual1();
-                            
-                        }
-                        else if (myTank2.Dodge == 1)
-                        {
-                            Console.Clear();
-                            menu();
-                            animation.Dodge1();
-                            myTank2.Dodge--;
-                            myTank.LoseAmmo(myTank.shellsRemaining);
-                            Thread.Sleep(3000);
-                        }
+                        End();
                     }
+                    else { 
 
-                    else if (myTank2.armor > 0 && Shot.Key == ConsoleKey.D)
-                    {
-                        myTank.Dodge++;
-
-                    }
-                }
-
-                Console.Clear();
-
-                //____________________________________________________________________________________________________________________________________________________________//
-                // Tank 2
-                menu();
-                if (myTank2.armor > 0)
+                    animation.MenuClear2();
+                    Console.SetCursorPosition(1, Console.CursorTop - 1);
+                    animation.ClearCurrentConsoleLine();
+                    menu();
+                   
+                    if (myTank2.armor > 0)
                 {
                     Console.WriteLine("Second Tank you're up");
-                    Console.WriteLine("");
+                    Console.WriteLine("                                                                                         ");
                     if (myTank2.HeavyCharge >= 5)
                     {
                         
-                        Console.WriteLine("You're HeavyShot is ready || (H) for heavy | (S) for normal shot | (D) to dodge");
+                        Console.WriteLine("You're HeavyShot is ready || (H) for heavy | (S) for normal shot | (D) to dodge         ");
                     }
 
                     else
                     {
                         
-                        Console.WriteLine("Shoot the first Tank? (S) to shoot | (D) to dodge");
+                        Console.WriteLine("Shoot the first Tank? (S) to shoot | (D) to dodge                         ");
                     }
 
-                    Console.WriteLine("    ______                                    ______                                                                   ");
-                    Console.WriteLine("   /      \\=====                        =====/      \\                                                                ");
-                    Console.WriteLine("  (---------)                              (---------)                                                                 ");
+                        animation.TanksNoAnimation();
+                        
+                        ConsoleKeyInfo Shot2 = Console.ReadKey();
 
-                    ConsoleKeyInfo Shot2 = Console.ReadKey();
+                        Console.SetCursorPosition(1, Console.CursorTop - 1);
+                        animation.ClearCurrentConsoleLine();
 
-                  
 
-                    if (myTank2.HeavyCharge >= 5 && Shot2.Key == ConsoleKey.H)
+                    if (myTank2.HeavyCharge >= 5 && Shot2.Key == ConsoleKey.H && myTank.Dodge == 0)
                     {
-                        if (Shot2.Key == ConsoleKey.H)
-                        {
-                            myTank2.shootHeavy(myTank);
-                            myTank2.HeavyCharge -= 5;
-                            Console.SetCursorPosition(1, Console.CursorTop - 3);
-                            animation.ClearCurrentConsoleLine();
-                            animation.HeavyVisual2();
-                        }
+                        
+                     myTank2.shootHeavy(myTank);
+                     myTank2.HeavyCharge -= 5;
+                     Console.SetCursorPosition(1, Console.CursorTop - 3);
+                     animation.ClearCurrentConsoleLine();
+                     animation.HeavyVisual2();
+                        
 
+                       
+                    }
                         else if (myTank.Dodge == 1)
                         {
-                            Console.Clear();
-                            menu();
-                            Console.WriteLine("The first Tank has dodged you're attack");
+                            Console.SetCursorPosition(1, Console.CursorTop - 3);
+                            animation.ClearCurrentConsoleLine();
+                            animation.Dodge2();
                             myTank.Dodge--;
+                            myTank2.LoseAmmo(myTank.shellsRemaining);
                             Thread.Sleep(3000);
                         }
-                    }
 
-                    else if (myTank.armor > 0 && Shot2.Key == ConsoleKey.S)
+
+                        else if (myTank.armor > 0 && Shot2.Key == ConsoleKey.S && myTank.Dodge == 0)
                     {
-                        if (Shot2.Key == ConsoleKey.S && myTank.Dodge == 0)
-                        {
+                        
                             myTank2.shootEnemy(myTank);
                             myTank2.LoseAmmo(myTank2.shellsRemaining);
                             myTank2.HeavyCharge++;
@@ -215,18 +252,6 @@ namespace tanktest
                             animation.ClearCurrentConsoleLine();
                             animation.ShotVisual2();
                             
-                        }
-
-                        else if (myTank.Dodge == 1)
-                        {
-                            Console.Clear();
-                            menu();
-                            animation.Dodge2();
-                            myTank.Dodge--;
-                            myTank2.LoseAmmo(myTank.shellsRemaining);
-                            Thread.Sleep(3000);
-                        }
-
                     }
 
                     else if (myTank.armor > 0 && Shot2.Key == ConsoleKey.D)
@@ -237,51 +262,65 @@ namespace tanktest
 
                 }
 
-                    Console.Clear();
+
+                    else
+                    {
+                        Console.SetCursorPosition(1, Console.CursorTop - 12);
+                        animation.ClearCurrentConsoleLine();
+                    }
+
+                    }
+
+
+
                 }
 
-            
-            if (myTank.armor <= 0)
-            {
-                Console.WriteLine(":/");
-                Console.WriteLine("");
-                Console.WriteLine("The first Tank has been defeated");
-                myTank2.shellsRemaining = 0;
-
-            }
-            else if (myTank2.armor <= 0)
-            {
-                Console.WriteLine("U_U");
-                Console.WriteLine("");
-                Console.WriteLine("The second Tank has been defeated");
-                myTank2.shellsRemaining = 0;
-
-            }
-            else if (myTank2.shellsRemaining == 0)
-            {
-                
-                Console.WriteLine("0__0");
-                Console.WriteLine("");
-                Console.WriteLine("The first Tank wins. The second Tank used all its shells");
-            }
-            else if (myTank.shellsRemaining == 0)
-            {
-                
-                Console.WriteLine("O__O");
-                Console.WriteLine("");
-                Console.WriteLine("the second Tank wins. The first Tank used all its shells");
-            }
+         
             Console.Read();
 
             void menu()
             {
+                
                 Console.WriteLine("|Tank 1 has " + myTank.armor + " Health Left || " + "tank 1 has " + myTank.shellsRemaining + " Shells left || Tank 1 has " + myTank.HeavyCharge + "/5 before it gets a heavy attack|");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
                 Console.WriteLine("|Tank 2 has " + myTank2.armor + " Health Left || " + "tank 2 has " + myTank2.shellsRemaining + " Shells left || Tank 2 has " + myTank2.HeavyCharge + "/5 before it gets a heavy attack|");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
-                Console.WriteLine("");
+                Console.WriteLine("                                                                                                         ");
 
             }
+                void End()
+                {
+                    if (myTank.armor <= 0)
+                    {
+                        Console.SetCursorPosition(0, Console.CursorTop - 12);
+
+
+                        animation.Deathtext2();
+                        animation.DeathScreen2();
+                        myTank2.shellsRemaining = 0;
+
+                    }
+                    else if (myTank2.armor <= 0)
+                    {
+                        Console.SetCursorPosition(0, Console.CursorTop - 5);
+
+                        animation.Deathtext1();
+                        animation.DeathScreen1();
+
+                    }
+                    else if (myTank2.shellsRemaining == 0)
+                    {
+                        Console.SetCursorPosition(1, Console.CursorTop - 12);
+                        animation.Deathtext1();
+                        animation.NoShellLoss();
+                    }
+                    else if (myTank.shellsRemaining == 0)
+                    {
+                        Console.SetCursorPosition(1, Console.CursorTop - 12);
+                        animation.Deathtext2();
+                        animation.NoShellLoss();
+                    }
+                }
 
             }
         }
