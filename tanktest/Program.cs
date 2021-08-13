@@ -38,7 +38,12 @@ namespace tanktest
             myTank2.Dodge = 0;
 
 
+            animation.StartMenu();
 
+            ConsoleKeyInfo Start = Console.ReadKey();
+            if (Start.Key == ConsoleKey.Enter)
+            {
+                Console.Clear();
             
 
             Console.WriteLine("How much health do you want the Tanks to have?");
@@ -276,8 +281,9 @@ namespace tanktest
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
                 Console.WriteLine("");
 
-            }          
+            }
 
+            }
         }
 
        

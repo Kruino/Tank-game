@@ -1028,6 +1028,17 @@ namespace tanktest
             Console.WriteLine("x (xxxxxxxxx)  x                           (---------)                                                             ");
         }
 
+        public void StartMenu()
+        {
+            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine("| ■■■■■■■■■■   ■■■■     ■■■    ■■  ■■    ■■   ■■■■■ |");
+            Console.WriteLine("|     ■■     ■■    ■■   ■■ ■■  ■■  ■■   ■■   ■      |");
+            Console.WriteLine("|     ■■    ■■      ■■  ■■  ■■ ■■  ■■ ■■      ■■ ■■ |");
+            Console.WriteLine("|     ■■    ■■■■■■■■■■  ■■   ■ ■■  ■■   ■■         ■|");
+            Console.WriteLine("|     ■■    ■■      ■■  ■■   ■■■■  ■■    ■■   ■■■■■ |");
+            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine("                 Press Enter to start                ");
+        }
 
 
 
