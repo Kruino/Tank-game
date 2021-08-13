@@ -1357,7 +1357,7 @@ namespace tanktest
 
         }
 
-        public void StartClear()    
+        public void StartClear()
         {
             Console.SetCursorPosition(1, Console.CursorTop - 8);
             ClearCurrentConsoleLine();

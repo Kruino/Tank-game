@@ -302,7 +302,7 @@ namespace tanktest
                     }
                     else if (myTank2.armor <= 0)
                     {
-                        Console.SetCursorPosition(0, Console.CursorTop - 5);
+                        Console.SetCursorPosition(0, Console.CursorTop - 12);
 
                         animation.Deathtext1();
                         animation.DeathScreen1();
